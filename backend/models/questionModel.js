@@ -10,7 +10,7 @@ const questionSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    subject: {
+    importance: {
       type: String,
       required: true,
     },

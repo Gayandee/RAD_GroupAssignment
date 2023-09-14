@@ -56,11 +56,11 @@ function MyShops({ history, search }) {
   };
 
   return (
-    <MainScreen title={`My Shops`}>
+    <MainScreen title={`Shop Details`}>
       {console.log(shops)}
       <Link to="/createshop">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
-          Create new Shop
+          Create new Shop Details
         </Button>
       </Link>
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}

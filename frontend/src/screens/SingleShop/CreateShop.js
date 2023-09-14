@@ -38,9 +38,9 @@ function CreateShop({ history }) {
   useEffect(() => {}, []);
 
   return (
-    <MainScreen title="Create a Shop">
+    <MainScreen title="Create a Shop Details">
       <Card>
-        <Card.Header>Create a new Shop</Card.Header>
+        <Card.Header>Create a new  Details</Card.Header>
         <Card.Body>
           <Form onSubmit={submitHandler}>
             {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -86,7 +86,7 @@ function CreateShop({ history }) {
             </Form.Group>
             {loading && <Loading size={50} />}
             <Button type="submit" variant="primary">
-              Create Shop
+              Create Shop Details
             </Button>
             <Button className="mx-2" onClick={resetHandler} variant="danger">
               Reset Fields

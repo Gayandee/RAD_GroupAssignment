@@ -56,11 +56,11 @@ function MyQuestions({ history, search }) {
   };
 
   return (
-    <MainScreen title={`Question Bank`}>
+    <MainScreen title={`Food Questions`}>
       {console.log(questions)}
       <Link to="/createquestion">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
-          Create new Question
+          Create new Food Questions
         </Button>
       </Link>
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -114,7 +114,7 @@ function MyQuestions({ history, search }) {
                   <Card.Body>
                     <h4>
                       <Badge variant="success">
-                        subject - {question.subject}
+                        importance - {question.importance}
                       </Badge>
                     </h4>
                     <blockquote className="blockquote mb-0">

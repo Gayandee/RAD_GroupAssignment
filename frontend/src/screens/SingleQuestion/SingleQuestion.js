@@ -11,7 +11,7 @@ import ReactMarkdown from "react-markdown";
 function SingleQuestion({ match, history }) {
   const [que, setque] = useState();
   const [answer, setanswer] = useState();
-  const [subject, setsubject] = useState();
+  const [importance, setimportance] = useState();
   const [date, setDate] = useState("");
 
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ function SingleQuestion({ match, history }) {
 
       setque(data.que);
       setanswer(data.answer);
-      setsubject(data.subject);
+      setimportance(data.importance);
       setDate(data.updatedAt);
     };
 
@@ -44,14 +44,14 @@ function SingleQuestion({ match, history }) {
 
   const resetHandler = () => {
     setque("");
-    setsubject("");
+    setimportance("");
     setanswer("");
   };
 
   const updateHandler = (e) => {
     e.preventDefault();
-    dispatch(updateQuestionAction(match.params.id, que, answer, subject));
-    if (!que || !answer || !subject) return;
+    dispatch(updateQuestionAction(match.params.id, que, answer, importance));
+    if (!que || !answer || !importance) return;
 
     resetHandler();
     history.push("/myquestions");
@@ -98,12 +98,12 @@ function SingleQuestion({ match, history }) {
             )}
 
             <Form.Group controlId="answer">
-              <Form.Label>subject</Form.Label>
+              <Form.Label>importance</Form.Label>
               <Form.Control
                 type="answer"
-                placeholder="Enter the subject"
-                value={subject}
-                onChange={(e) => setsubject(e.target.value)}
+                placeholder="Rate the importance (1-10)"
+                value={importance}
+                onChange={(e) => setimportance(e.target.value)}
               />
             </Form.Group>
             {loading && <Loading size={50} />}

@@ -52,7 +52,7 @@ function MyDiaries({ history, search }) {
     };
 
     return (
-        <MainScreen title={`My Diaries`}>
+        <MainScreen title={`Food Diaries`}>
             {console.log(diaries)}
             <Link to="/creatediary">
                 <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">

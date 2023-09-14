@@ -10,7 +10,7 @@ const recipeSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    category: {
+    Level: {
       type: String,
       required: true,
     },

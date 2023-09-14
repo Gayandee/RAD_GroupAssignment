@@ -76,10 +76,10 @@ function SingleDiary({ match, history }) {
                         </Form.Group>
 
                         <Form.Group controlId="diarybody">
-                            <Form.Label>Diary Body</Form.Label>
+                            <Form.Label>Diary Note</Form.Label>
                             <Form.Control
                                 as="textarea"
-                                placeholder="Enter Diary Body"
+                                placeholder="Enter your Food Diary"
                                 rows={5}
                                 value={diarybody}
                                 onChange={(e) => setDiarybody(e.target.value)}

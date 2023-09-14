@@ -48,7 +48,7 @@ export const listQuestions = () => async (dispatch, getState) => {
   }
 };
 
-export const createQuestionAction = (que, answer, subject) => async (
+export const createQuestionAction = (que, answer, importance) => async (
   dispatch,
   getState
 ) => {
@@ -70,7 +70,7 @@ export const createQuestionAction = (que, answer, subject) => async (
 
     const { data } = await axios.post(
       `/api/questions/create`,
-      { que, answer, subject },
+      { que, answer, importance },
       config
     );
 
@@ -124,7 +124,7 @@ export const deleteQuestionAction = (id) => async (dispatch, getState) => {
   }
 };
 
-export const updateQuestionAction = (id, que, answer, subject) => async (
+export const updateQuestionAction = (id, que, answer, importance) => async (
   dispatch,
   getState
 ) => {
@@ -146,7 +146,7 @@ export const updateQuestionAction = (id, que, answer, subject) => async (
 
     const { data } = await axios.put(
       `/api/questions/${id}`,
-      { que, answer, subject},
+      { que, answer, importance},
       config
     );
 

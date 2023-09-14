@@ -35,7 +35,7 @@ function CreateDiary({ history }) {
     useEffect(() => {}, []);
 
     return (
-        <MainScreen title="Create an Diary">
+        <MainScreen title="Food Diary">
             <Card>
                 <Card.Header>Create a new Diary</Card.Header>
                 <Card.Body>
@@ -52,11 +52,11 @@ function CreateDiary({ history }) {
                         </Form.Group>
 
                         <Form.Group controlId="diarybody">
-                            <Form.Label>Diary Body</Form.Label>
+                            <Form.Label>Diary Note</Form.Label>
                             <Form.Control
                                 as="textarea"
                                 value={diarybody}
-                                placeholder="Enter the diary body"
+                                placeholder="Enter the Food diary"
                                 onChange={(e) => setDiarybody(e.target.value)}
                             />
                         </Form.Group>

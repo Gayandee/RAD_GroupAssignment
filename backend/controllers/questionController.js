@@ -28,14 +28,14 @@ const getQuestionById = asyncHandler(async (req, res) => {
 //@route           GET /api/questions/create
 //@access          Private
 const CreateQuestion = asyncHandler(async (req, res) => {
-  const { que, answer, subject } = req.body;
+  const { que, answer, importance } = req.body;
 
-  if (!que || !answer || !subject) {
+  if (!que || !answer || !importance) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
     return;
   } else {
-    const question = new Question({ user: req.user._id, que, answer, subject });
+    const question = new Question({ user: req.user._id, que, answer, importance });
 
     const createdQuestion = await question.save();
 
@@ -67,7 +67,7 @@ const DeleteQuestion = asyncHandler(async (req, res) => {
 // @route   PUT /api/questions/:id
 // @access  Private
 const UpdateQuestion = asyncHandler(async (req, res) => {
-  const { que, answer, subject } = req.body;
+  const { que, answer, importance } = req.body;
 
   const question = await Question.findById(req.params.id);
 
@@ -79,7 +79,7 @@ const UpdateQuestion = asyncHandler(async (req, res) => {
   if (question) {
     question.que = que;
     question.answer = answer;
-    question.subject = subject;
+    question.importance = importance;
 
     const updatedQuestion = await question.save();
     res.json(updatedQuestion);

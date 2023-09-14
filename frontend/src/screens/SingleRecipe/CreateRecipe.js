@@ -10,7 +10,7 @@ import ReactMarkdown from "react-markdown";
 function CreateRecipe({ history }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [category, setCategory] = useState("");
+  const [Level, setLevel] = useState("");
 
   const dispatch = useDispatch();
 
@@ -21,14 +21,14 @@ function CreateRecipe({ history }) {
 
   const resetHandler = () => {
     setTitle("");
-    setCategory("");
+    setLevel("");
     setContent("");
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(createRecipeAction(title, content, category));
-    if (!title || !content || !category) return;
+    dispatch(createRecipeAction(title, content, Level));
+    if (!title || !content || !Level) return;
 
     resetHandler();
     history.push("/myrecipes");
@@ -54,11 +54,11 @@ function CreateRecipe({ history }) {
             </Form.Group>
 
             <Form.Group controlId="content">
-              <Form.Label>Content</Form.Label>
+              <Form.Label>Method</Form.Label>
               <Form.Control
                 as="textarea"
                 value={content}
-                placeholder="Enter the content"
+                placeholder="Enter the method"
                 rows={4}
                 onChange={(e) => setContent(e.target.value)}
               />
@@ -73,12 +73,12 @@ function CreateRecipe({ history }) {
             )}
 
             <Form.Group controlId="content">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Level</Form.Label>
               <Form.Control
                 type="content"
-                value={category}
-                placeholder="Enter the Category"
-                onChange={(e) => setCategory(e.target.value)}
+                value={Level}
+                placeholder="Enter the Level (Hard,Medium,Easy)"
+                onChange={(e) => setLevel(e.target.value)}
               />
             </Form.Group>
             {loading && <Loading size={50} />}

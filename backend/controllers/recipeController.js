@@ -28,14 +28,14 @@ const getRecipeById = asyncHandler(async (req, res) => {
 //@route           GET /api/recipes/create
 //@access          Private
 const CreateRecipe = asyncHandler(async (req, res) => {
-  const { title, content, category } = req.body;
+  const { title, content, Level } = req.body;
 
-  if (!title || !content || !category) {
+  if (!title || !content || !Level) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
     return;
   } else {
-    const recipe = new Recipe({ user: req.user._id, title, content, category });
+    const recipe = new Recipe({ user: req.user._id, title, content, Level });
 
     const createdRecipe = await recipe.save();
 
@@ -67,7 +67,7 @@ const DeleteRecipe = asyncHandler(async (req, res) => {
 // @route   PUT /api/recipes/:id
 // @access  Private
 const UpdateRecipe = asyncHandler(async (req, res) => {
-  const { title, content, category } = req.body;
+  const { title, content, Level } = req.body;
 
   const recipe = await Recipe.findById(req.params.id);
 
@@ -79,7 +79,7 @@ const UpdateRecipe = asyncHandler(async (req, res) => {
   if (recipe) {
     recipe.title = title;
     recipe.content = content;
-    recipe.category = category;
+    recipe.Level = Level;
 
     const updatedRecipe = await recipe.save();
     res.json(updatedRecipe);

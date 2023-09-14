@@ -37,9 +37,9 @@ function CreateGrocery({ history }) {
   useEffect(() => {}, []);
 
   return (
-    <MainScreen title="Create a Grocery">
+    <MainScreen title="Create a Grocery List">
       <Card>
-        <Card.Header>Create a New Item</Card.Header>
+        <Card.Header>Create a New List</Card.Header>
         <Card.Body>
           <Form onSubmit={submitHandler}>
             {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -54,7 +54,7 @@ function CreateGrocery({ history }) {
             </Form.Group>
 
             <Form.Group controlId="description">
-              <Form.Label>Grocery</Form.Label>
+              <Form.Label>Description</Form.Label>
               <Form.Control
                 as="textarea"
                 value={description}
@@ -83,7 +83,7 @@ function CreateGrocery({ history }) {
             </Form.Group>
             {loading && <Loading size={50} />}
             <Button type="submit" variant="primary">
-              Create Grocery
+              Create Grocery List
             </Button>
             <Button className="mx-2" onClick={resetHandler} variant="danger">
               Reset Feilds

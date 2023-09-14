@@ -11,7 +11,7 @@ import ReactMarkdown from "react-markdown";
 function SingleRecipe({ match, history }) {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
-  const [category, setCategory] = useState();
+  const [Level, setLevel] = useState();
   const [date, setDate] = useState("");
 
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ function SingleRecipe({ match, history }) {
 
       setTitle(data.title);
       setContent(data.content);
-      setCategory(data.category);
+      setLevel(data.Level);
       setDate(data.updatedAt);
     };
 
@@ -44,14 +44,14 @@ function SingleRecipe({ match, history }) {
 
   const resetHandler = () => {
     setTitle("");
-    setCategory("");
+    setLevel("");
     setContent("");
   };
 
   const updateHandler = (e) => {
     e.preventDefault();
-    dispatch(updateRecipeAction(match.params.id, title, content, category));
-    if (!title || !content || !category) return;
+    dispatch(updateRecipeAction(match.params.id, title, content, Level));
+    if (!title || !content || !Level) return;
 
     resetHandler();
     history.push("/myrecipes");
@@ -79,10 +79,10 @@ function SingleRecipe({ match, history }) {
             </Form.Group>
 
             <Form.Group controlId="content">
-              <Form.Label>Content</Form.Label>
+              <Form.Label>Method</Form.Label>
               <Form.Control
                 as="textarea"
-                placeholder="Enter the content"
+                placeholder="Enter the method"
                 rows={4}
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
@@ -98,12 +98,12 @@ function SingleRecipe({ match, history }) {
             )}
 
             <Form.Group controlId="content">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Level</Form.Label>
               <Form.Control
                 type="content"
-                placeholder="Enter the Category"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
+                placeholder="Enter the Level (Hard,Medium,Easy)"
+                value={Level}
+                onChange={(e) => setLevel(e.target.value)}
               />
             </Form.Group>
             {loading && <Loading size={50} />}

@@ -10,7 +10,7 @@ import ReactMarkdown from "react-markdown";
 function CreateQuestion({ history }) {
   const [que, setque] = useState("");
   const [answer, setanswer] = useState("");
-  const [subject, setsubject] = useState("");
+  const [importance, setimportance] = useState("");
 
   const dispatch = useDispatch();
 
@@ -21,14 +21,14 @@ function CreateQuestion({ history }) {
 
   const resetHandler = () => {
     setque("");
-    setsubject("");
+    setimportance("");
     setanswer("");
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(createQuestionAction(que, answer, subject));
-    if (!que || !answer || !subject) return;
+    dispatch(createQuestionAction(que, answer, importance));
+    if (!que || !answer || !importance) return;
 
     resetHandler();
     history.push("/myquestions");
@@ -73,12 +73,12 @@ function CreateQuestion({ history }) {
             )}
 
             <Form.Group controlId="answer">
-              <Form.Label>Subject</Form.Label>
+              <Form.Label>Importance</Form.Label>
               <Form.Control
                 type="answer"
-                value={subject}
-                placeholder="Enter the subject"
-                onChange={(e) => setsubject(e.target.value)}
+                value={importance}
+                placeholder="Rate the importance (1-10)"
+                onChange={(e) => setimportance(e.target.value)}
               />
             </Form.Group>
             {loading && <Loading size={50} />}

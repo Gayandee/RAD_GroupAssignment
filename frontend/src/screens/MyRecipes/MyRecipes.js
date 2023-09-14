@@ -109,7 +109,7 @@ function MyRecipes({ history, search }) {
                   <Card.Body>
                     <h4>
                       <Badge variant="success">
-                        Category - {recipe.category}
+                        Level - {recipe.Level}
                       </Badge>
                     </h4>
                     <blockquote className="blockquote mb-0">

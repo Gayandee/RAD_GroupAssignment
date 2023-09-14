@@ -69,7 +69,7 @@ function SingleQuestion({ match, history }) {
               <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
             )}
             <Form.Group controlId="que">
-              <Form.Label>que</Form.Label>
+              <Form.Label>Question</Form.Label>
               <Form.Control
                 type="que"
                 placeholder="Enter the que"
@@ -79,7 +79,7 @@ function SingleQuestion({ match, history }) {
             </Form.Group>
 
             <Form.Group controlId="answer">
-              <Form.Label>answer</Form.Label>
+              <Form.Label>Answer</Form.Label>
               <Form.Control
                 as="textarea"
                 placeholder="Enter the answer"
@@ -98,7 +98,7 @@ function SingleQuestion({ match, history }) {
             )}
 
             <Form.Group controlId="answer">
-              <Form.Label>importance</Form.Label>
+              <Form.Label>Importance</Form.Label>
               <Form.Control
                 type="answer"
                 placeholder="Rate the importance (1-10)"

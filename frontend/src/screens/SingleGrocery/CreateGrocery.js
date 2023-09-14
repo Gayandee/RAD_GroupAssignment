@@ -73,7 +73,7 @@ function CreateGrocery({ history }) {
             )}
 
             <Form.Group controlId="priorityLevel">
-              <Form.Label>Priority Level</Form.Label>
+              <Form.Label>Priority Level (1-10)</Form.Label>
               <Form.Control
                 type="priorityLevel"
                 value={priorityLevel}

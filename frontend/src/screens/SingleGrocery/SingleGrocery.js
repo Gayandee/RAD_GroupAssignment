@@ -98,7 +98,7 @@ function SingleGrocery({ match, history }) {
             )}
 
             <Form.Group controlId="description">
-              <Form.Label>Priority Level</Form.Label>
+              <Form.Label>Priority Level (1-10)</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter the Priority Level"

@@ -1,0 +1,12 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.Title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #6e3a0d80;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
